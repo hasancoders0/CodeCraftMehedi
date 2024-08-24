@@ -42,7 +42,7 @@
   --font-sans-serif: "Source Sans Pro", sans-serif;
   --font-roboto-mono: "Roboto Mono", monospace;
 }
-* {
+*, span {
   margin: 0;
   padding: 0;
 }
@@ -73,12 +73,103 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 .btn {
+  font-family: var(--font-roboto-mono);
+  cursor: pointer;
+  transition: all 0.5s;
+  overflow: hidden;
 }
-.btn-primary {
+/* ------------------- Primary Button with Hover Effect--------------- */
+.btn-primary{
+  margin: 5px 0;
+  padding: 4px 30px;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+  background: transparent;
+  color: var(--primary);
+  text-transform: uppercase;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
 }
+
 .btn-primary:hover {
+  color: var(--secondary);
 }
+.btn-primary span {
+  transition: all 0.8s;
+  z-index: -1;
+}
+
+.btn-primary .first {
+  content: "";
+  position: absolute;
+  right: 105%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--primary);
+  transform: rotate(45deg);
+}
+
+.btn-primary:hover .first {
+  top: 0;
+  right: 0;
+  transform: rotate(0deg);
+}
+.btn-primary .second {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: -140%;
+  height: 100%;
+  width: 25%;
+  background: var(--primary);
+  transform: rotate(45deg);
+}
+
+.btn-primary:hover .second {
+  top: 0;
+  left: 50%;
+  transform: rotate(0deg);
+}
+
+.btn-primary .third {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 140%;
+  width: 25%;
+  background: var(--primary);
+  transform: rotate(45deg);
+  
+}
+
+.btn-primary:hover .third {
+  top: 0;
+  left: 25%;
+  transform: rotate(0rad);
+}
+
+.btn-primary .fourth {
+  content: "";
+  position: absolute;
+  left: 105%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background: var(--primary);
+  transform: rotate(45deg);
+}
+
+.btn-primary:hover .fourth {
+  top: 0;
+  left: 0;
+  transform: rotate(0rad);
+}
+/* ================================================================================ */
 .btn-secondary {
 }
 .btn-secondary:hover {
 }
+
