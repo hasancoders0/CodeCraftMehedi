@@ -39,6 +39,34 @@
         </div>
        </div>
     </header>
+    <div class="navigation-section">
+      <nav class="navbar sticky-top navbar-expand-lg">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-nav"></span>
+          </button>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+            </ul>
+            <ul class="navbar-nav brand">
+              <img src="content/images/logo.png" alt="" class="brand-img">
+              <li class="brand-text">
+                <h5 class="brand-title">Mehedi Hasan</h5>
+                <div class="brand-subtitle">Web Designer | Developer</div>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+              <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+       </nav>
+    </div>
     <!-- ================================ -->
      <!-- ----- Main contect section -------- -->
     <main>
@@ -53,7 +81,90 @@
 
     <!-- ---------Footer Section ----------- -->
     <footer>
-
+      <style>
+      .coming-section * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      .coming-section {
+        background-color:  #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150px;
+        height: 40vh;
+        margin-bottom: 1000px;
+      }
+      .waviy {
+        position: relative;
+        -webkit-box-reflect: below -50px linear-gradient(transparent, rgba(0,0,0,.2));
+        font-size: 120px;
+        font-weight: bold;
+      }
+      .waviy span {
+        position: relative;
+        display: table-cell;
+        color: var(--primary);
+        text-transform: uppercase;
+        animation: waviy 2.5s infinite;
+        animation-delay: calc(.2s * var(--i));
+        padding: 0 6px;
+        
+      }
+      @keyframes waviy {
+        0%,40%,100% {
+          transform: translateY(0)
+        }
+        20% {
+          transform: translateY(-20px)
+        }
+      }
+      
+        @media screen and (max-width: 1100px) {
+      .waviy {
+        font-size: 80px;
+      }
+      }
+          @media screen and (max-width: 900px) {
+      .waviy {
+        font-size: 74px;
+      }
+      }
+            @media screen and (max-width: 500px) {
+      .waviy {
+        .coming-section{
+          min-height: 100px;
+        }
+        font-size: 38px;
+      }
+      }
+              @media screen and (max-width: 400px) {
+      .waviy {
+        font-size: 32px;
+      }
+      }
+      </style>
+      
+      
+      <section class="coming-section">
+        <div class="waviy">
+          <span style="--i:1">C</span>
+          <span style="--i:2">O</span>
+          <span style="--i:3">m</span>
+          <span style="--i:4">i</span>
+          <span style="--i:5">n</span>
+          <span style="--i:6">g</span>
+          <span style="--i:7">&nbsp</span>
+          <span style="--i:8">s</span>
+          <span style="--i:9">o</span>
+          <span style="--i:10">o</span>
+          <span style="--i:11">n</span>
+          <span style="--i:12">!</span>
+       
+         </div>
+      </section>
     </footer>
     <!-- =================================== -->
 

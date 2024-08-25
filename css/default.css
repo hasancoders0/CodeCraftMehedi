@@ -75,6 +75,9 @@ a{
   text-decoration: none;
   background-color: transparent;
 }
+img{
+  width: 100%;
+}
 /* ------------Layout Container Style----------------- */
 .container {
   width: 100%;
