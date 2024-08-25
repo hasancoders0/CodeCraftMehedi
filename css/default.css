@@ -42,7 +42,7 @@
   --font-sans-serif: "Source Sans Pro", sans-serif;
   --font-roboto-mono: "Roboto Mono", monospace;
 }
-*, span {
+* {
   margin: 0;
   padding: 0;
 }
@@ -68,23 +68,73 @@ body{
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: var(--secondary);
-  font-family: var(--font-roboto-mono);
-  font-size: 20px;
-  font-weight: 500;
+  font-family: var(--font-sans-serif);
 }
+a{
+  color: var(--primary);
+  text-decoration: none;
+  background-color: transparent;
+}
+/* ------------Layout Container Style----------------- */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* =================================================== */
 .btn {
   font-family: var(--font-roboto-mono);
   cursor: pointer;
   transition: all 0.5s;
   overflow: hidden;
+  position: relative; /* Ensure relative positioning */
+  display: inline-block; /* Make sure the anchor tag behaves like a block */
 }
-/* ------------------- Primary Button with Hover Effect--------------- */
+
 .btn-primary{
   margin: 5px 0;
   padding: 4px 30px;
   font-size: 15px;
   font-weight: 700;
-  position: relative;
   background: transparent;
   color: var(--primary);
   text-transform: uppercase;
@@ -95,36 +145,34 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
   color: var(--secondary);
 }
+
 .btn-primary span {
   transition: all 0.8s;
   z-index: -1;
 }
 
-.btn-primary .first {
+.btn-primary .first, .btn-primary .second, .btn-primary .third, .btn-primary .fourth {
   content: "";
   position: absolute;
-  right: 105%;
-  top: 0;
   width: 25%;
   height: 100%;
   background: var(--primary);
   transform: rotate(45deg);
 }
 
-.btn-primary:hover .first {
+.btn-primary .first {
+  right: 105%;
   top: 0;
+}
+
+.btn-primary:hover .first {
   right: 0;
   transform: rotate(0deg);
 }
+
 .btn-primary .second {
-  content: "";
-  position: absolute;
   left: 25%;
-  top: -140%;
-  height: 100%;
-  width: 25%;
-  background: var(--primary);
-  transform: rotate(45deg);
+  top: -155%;
 }
 
 .btn-primary:hover .second {
@@ -134,38 +182,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary .third {
-  content: "";
-  position: absolute;
   left: 50%;
-  height: 100%;
-  top: 140%;
-  width: 25%;
-  background: var(--primary);
-  transform: rotate(45deg);
-  
+  top: 155%;
 }
 
 .btn-primary:hover .third {
   top: 0;
   left: 25%;
-  transform: rotate(0rad);
+  transform: rotate(0deg);
 }
 
 .btn-primary .fourth {
-  content: "";
-  position: absolute;
   left: 105%;
   top: 0;
-  height: 100%;
-  width: 25%;
-  background: var(--primary);
-  transform: rotate(45deg);
 }
 
 .btn-primary:hover .fourth {
-  top: 0;
   left: 0;
-  transform: rotate(0rad);
+  transform: rotate(0deg);
 }
 /* ================================================================================ */
 .btn-secondary {
