@@ -105,33 +105,55 @@
 /* ============================= */
 
 /* ----------------- navigation bar ----------------------- */
-@supports ((position: -webkit-sticky;) or (position: sticky;)){
-  .sticky-top{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
+/* Initially show the brand-img and hide the brand-text */
+
+.navbar .brand .brand-img {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
-.navbar{
+
+.navbar .brand .brand-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* When the navbar is sticky, hide the brand-img and show the brand-text */
+.navbar.sticky .brand .brand-img {
+  opacity: 0;
+}
+
+.navbar.sticky .brand .brand-text {
+  opacity: 1;
+}
+
+
+
+/* Sticky Navbar */
+.sticky-top {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+/* Navbar Style */
+.navbar {
   box-shadow: 0 1px 10px rgba(45, 45, 45, 0.18);
   background: #fff;
-}
-.navbar{
-  position: relative;
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
   justify-content: space-between;
   color: var(--secondary);
 }
-.navbar .container{
+
+.navbar .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-.navbar .navbar-toggler{
+
+.navbar .navbar-toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
@@ -140,42 +162,40 @@
   border-radius: 0.25rem;
 }
 @media (min-width: 992px) {
-  .navbar-expand-lg{
+  .navbar-expand-lg {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row nowrap;
     -webkit-box-pack: start;
     justify-content: flex-start;
   }
-  .navbar-expand-lg .container{
+  .navbar-expand-lg .container {
     flex-wrap: nowrap;
   }
-  .navbar-expand-lg .navbar-toggler{
+  .navbar-expand-lg .navbar-toggler {
     display: none;
   }
 }
-
-
-.collapse:not(.show){
+.collapse:not(.show) {
   display: none;
 }
 .collapse.show {
   display: block;
 }
-.navbar-collapse{
+.navbar-collapse {
   flex-basis: 100%;
   -webkit-box-flex: 1;
   flex-grow: 1;
   align-items: center;
 }
-.navbar-nav{
+.navbar-nav {
   display: flex;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
-.navbar .navbar-nav .nav-link{
+.navbar .navbar-nav .nav-link {
   color: inherit;
   font-weight: bold;
   display: block;
@@ -183,31 +203,26 @@
   line-height: 2;
   padding: 0.5rem 1rem;
 }
-.navbar .nav-link:hover{
+.navbar .nav-link:hover {
   color: var(--primary);
 }
-.navbar .nav-link.active{
+.navbar .nav-link.active {
   color: var(--primary);
 }
-.navbar .navbar-nav:first-child .nav-item:first-child .nav-link{
+.navbar .navbar-nav:first-child .nav-item:first-child .nav-link {
   padding-left: 0;
 }
-.navbar .navbar-nav:last-child .nav-item:last-child .nav-link{
+.navbar .navbar-nav:last-child .nav-item:last-child .nav-link {
   padding-right: 0;
 }
-
-.navbar .navbar-nav.brand{
+.navbar .navbar-nav.brand {
   text-align: center;
 }
-.navbar.affix .brand-img{
-  top: -10;
-  opacity: 0;
-}
-.navbar .brand .brand-img{
+.navbar .brand .brand-img {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-65%, -50%);
   width: 170px;
   border: 10px solid #fff;
   z-index: 2;
@@ -215,38 +230,28 @@
   box-shadow: 0 5px 1px rgba(128, 128, 128, 0.13);
   border-radius: 50%;
 }
-.navbar.affix .brand-text{
-  bottom: 0;
-  opacity: 1;
-}
-.navbar .brand .brand-text{
+.navbar .brand .brand-text {
   position: relative;
   bottom: -20;
-  opacity: 0;
   transition: 1s;
   z-index: 1;
 }
-.navbar .brand .brand-subtitle{
+.navbar .brand .brand-subtitle {
   font-size: 13px;
   color: #888;
 }
-@media (min-width: 992px){
-  .navbar-expand-lg .navbar-collapse{
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
   }
-  .navbar-nav{
+  .navbar-nav {
     flex-direction: row;
   }
-  .navbar .navbar-nav .nav-link{
+  .navbar .navbar-nav .nav-link {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
-
-
-
-
-
 
 /* ======================================================== */
