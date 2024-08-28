@@ -238,18 +238,18 @@
         </p>
       </div>
 
-      <form id="contactForm" method="post">
+      <form id="contactForm">
         <div>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required>
         </div>
         <div>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required>
         </div>
         <div>
           <label for="subject">Subject:</label>
-          <input type="text" id="subject" name="subject" required />
+          <input type="text" id="subject" name="subject" required>
         </div>
         <div>
           <label for="message">Message:</label>
@@ -258,44 +258,40 @@
         <button type="submit">Send Message</button>
       </form>
       <div id="formResponse"></div>
+      
       <!-- Include the EmailJS SDK -->
-      <script
-        type="text/javascript"
-        src="https://cdn.emailjs.com/dist/email.min.js"
-      ></script>
-      <script type="text/javascript">
-        (function () {
-          emailjs.init("service_194fn4g"); // Replace with your user ID from EmailJS
-        })();
-      </script>
+<!-- Include the EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("mT9UZYhrCosMByOh4"); // Your EmailJS User ID
+  })();
+</script>
 
-      <script>
-        document
-          .getElementById("contactForm")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-            // Get form data
-            var formData = {
-              name: document.getElementById("name").value,
-              email: document.getElementById("email").value,
-              subject: document.getElementById("subject").value,
-              message: document.getElementById("message").value,
-            };
+    // Collect the form data
+    var templateParams = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value
+    };
 
-            // Send email using EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData).then(
-              function (response) {
-                document.getElementById("formResponse").innerHTML =
-                  "Message sent successfully!";
-              },
-              function (error) {
-                document.getElementById("formResponse").innerHTML =
-                  "Failed to send message.";
-              }
-            );
-          });
-      </script>
+    // Send the email using EmailJS
+    emailjs.send('service_194fn4g', 'template_d1ztpmx', templateParams)
+      .then(function(response) {
+        document.getElementById('formResponse').innerHTML = "Message sent successfully!";
+      }, function(error) {
+        document.getElementById('formResponse').innerHTML = "Failed to send message.";
+      });
+  });
+</script>
+
+
+      
     </footer>
     <!-- =================================== -->
 
