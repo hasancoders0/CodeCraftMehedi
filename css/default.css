@@ -5,13 +5,13 @@
   
   * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
   */
-  /* Primary Font for h1 h2 h3 h4 h5 h6 heading */
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Primary Font for h1 h2 h3 h4 h5 h6 heading */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 /* Secondary or Pragraph font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 :root {
   --primary: #fa26a0;
-  --secondary: #0F1426;
+  --secondary: #0f1426;
   --cyan: #2ff3e0;
   --gold: #f8d210;
   --chiliPepper: #f51720;
@@ -25,7 +25,6 @@
   --yellow: #fad02c;
   --green: #a3c14a;
   --teal: #20c997;
-  --cyan: #47d8e0;
   --gray: #6c757d;
   --gray-dark: #343a40;
   --success: #a3c14a;
@@ -52,30 +51,34 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   font-family: "Raleway", sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body{
+body {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   color: var(--secondary);
   font-family: var(--font-raleway);
 }
-a{
+a {
   color: var(--primary);
   text-decoration: none;
   background-color: transparent;
 }
-img{
+img {
   width: 100%;
 }
 /* ------------Layout Container Style----------------- */
@@ -115,7 +118,6 @@ img{
   }
 }
 
-
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -124,7 +126,7 @@ img{
   margin-left: auto;
 }
 /* =================================================== */
-button{
+button {
   cursor: pointer;
   overflow: hidden;
 }
@@ -137,7 +139,7 @@ button{
   display: inline-block; /* Make sure the anchor tag behaves like a block */
 }
 
-.btn-primary{
+.btn-primary {
   margin: 5px 0;
   padding: 4px 30px;
   font-size: 15px;
@@ -150,7 +152,7 @@ button{
   /* transition: background 0.5s ease-in-out 0.6s; */
   transition: background-color 0.5s ease-in-out 0s;
 }
-a.btn-primary{
+a.btn-primary {
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -158,7 +160,6 @@ a.btn-primary{
   color: var(--secondary);
   background: #fa26a0;
   transition-delay: 0.6s;
-  
 }
 .btn-primary:hover::before {
   transition-delay: 0s; /* Instant transition on hover-out */
@@ -168,7 +169,10 @@ a.btn-primary{
   z-index: -1;
 }
 
-.btn-primary .first, .btn-primary .second, .btn-primary .third, .btn-primary .fourth {
+.btn-primary .first,
+.btn-primary .second,
+.btn-primary .third,
+.btn-primary .fourth {
   content: "";
   position: absolute;
   width: 25%;
@@ -219,10 +223,106 @@ a.btn-primary{
   transform: rotate(0deg);
 }
 /* ================================================================================ */
-.btn-secondary {
+/* Base hidden class */
+.d-none {
+  display: none !important;
 }
-.btn-secondary:hover {
+
+/* Hidden only on xs */
+@media (min-width: 576px) {
+  .d-xs-none {
+    display: none !important;
+  }
+  .d-xs-block {
+    display: block !important;
+  }
 }
+
+/* Hidden only on sm */
+@media (min-width: 768px) {
+  .d-sm-none {
+    display: none !important;
+  }
+  .d-sm-block {
+    display: block !important;
+  }
+}
+
+/* Hidden only on md */
+@media (min-width: 992px) {
+  .d-md-none {
+    display: none !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+}
+
+/* Hidden only on lg */
+@media (min-width: 1200px) {
+  .d-lg-none {
+    display: none !important;
+  }
+  .d-lg-block {
+    display: block !important;
+  }
+}
+
+/* Hidden only on xl */
+.d-xl-none {
+  display: none !important;
+}
+
+/* Visible on all */
+.d-block {
+  display: block !important;
+}
+
+/* Visible only on xs */
+@media (min-width: 576px) {
+  .d-xs-block {
+    display: block !important;
+  }
+  .d-xs-none {
+    display: none !important;
+  }
+}
+
+/* Visible only on sm */
+@media (min-width: 768px) {
+  .d-sm-block {
+    display: block !important;
+  }
+  .d-sm-none {
+    display: none !important;
+  }
+}
+
+/* Visible only on md */
+@media (min-width: 992px) {
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+/* Visible only on lg */
+@media (min-width: 1200px) {
+  .d-lg-block {
+    display: block !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+/* Visible only on xl */
+.d-xl-block {
+  display: block !important;
+}
+/* ============================================================= */
 
 /* spaceing or paddding and margin default style usign bootstarp */
 .m-0 {
@@ -1488,8 +1588,8 @@ a.btn-primary{
   .pr-xl-4,
   .px-xl-4 {
     padding-right: 1.5rem !important;
-  }z
-  .pb-xl-4,
+  }
+  z .pb-xl-4,
   .py-xl-4 {
     padding-bottom: 1.5rem !important;
   }
