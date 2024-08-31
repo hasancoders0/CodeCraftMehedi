@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
   // Primary Button Effect adding shap innerHTML code
   document.querySelectorAll(".btn-primary").forEach(function (element) {
     element.insertAdjacentHTML(
@@ -38,6 +39,31 @@ document.addEventListener("DOMContentLoaded", function () {
       '<span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth"></span>'
     );
   });
+
+// Slow loading video
+// Function to delay the video autoplay
+
+  var video = document.getElementById('backgroundVideo');
+
+  // Delay the video autoplay
+  setTimeout(function() {
+      // Make the video visible
+      video.style.display = 'block';
+
+      // Add autoplay and playsinline attributes
+      video.setAttribute('autoplay', 'true');
+      video.setAttribute('playsinline', 'true');
+
+      // Attempt to play the video
+      video.play().catch(function(error) {
+          console.log("Video playback failed:", error);
+      });
+  }, 3000); // 3-second delay
+
+
+
+
+
 
   // Collapse toggle
 
