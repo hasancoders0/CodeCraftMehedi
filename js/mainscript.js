@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
   // Collapse toggle
 
   var navbarToggler = document.querySelector(".navbar-toggler");
@@ -110,6 +108,41 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  // fade in trigger animation
+// Flag to track whether elements have been animated
+// Flag to track whether elements have been animated
+const animatedElements = new Set();
+
+// Function to handle the intersection of elements
+function handleIntersection(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (!animatedElements.has(entry.target)) {
+        entry.target.classList.add('animated');
+        animatedElements.add(entry.target);
+      }
+    }
+  });
+}
+
+// Create an Intersection Observer instance
+const observer = new IntersectionObserver(handleIntersection, {
+  threshold: 0.1  // Adjust this value based on when you want the animation to trigger
+});
+
+// Select all elements with the .trigger-animation class
+const elementsToAnimate = document.querySelectorAll('.trigger-animation');
+
+// Observe each element
+elementsToAnimate.forEach(element => {
+  observer.observe(element);
+});
+
+
+
+
+
+
 });
 
 
