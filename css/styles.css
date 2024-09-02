@@ -103,7 +103,7 @@
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-image: linear-gradient(0deg, transparent 15%, var(--primary) 15%, var(--primary) 20%, transparent 20%) 1; }
+  50% { border-image: linear-gradient(0deg, transparent 12%, #fff 12%, #fff 16%, transparent 16%) 1; }
 }
 
 /* Hide overflow and set up the typing effect */
@@ -347,11 +347,30 @@ button:hover {
   padding: 0 0 0 20px;
 }
 .hero-section .profile-img:hover:after {
-  background: #C49B66;
+  background: var(--primary);
   left: 5px;
   top: -15px;
   right: 15px;
   bottom: 20px;
+}
+
+.hero-section .content .social-icon span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #eee;
+  margin: 15px 5px 15px 0;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: 14px;
+}
+.hero-section .content .social-icon span:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
 }
 /* ======================================== */
 

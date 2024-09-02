@@ -44,21 +44,24 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none !important;
+  list-style: none;
 }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 html {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-raleway);
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family:  var(--font-raleway);
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -71,19 +74,33 @@ h5,
 h6 {
   margin: 0;
   color: var(--secondary);
-  font-family: var(--font-raleway);
+  font-family: var(--font-roboto-mono);
 }
 p {
-  font-size: 15px;
-  color: var(--secondary);
-  line-height: 1.6;
-  word-spacing: 1px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+  word-spacing: 2px;
   margin: 0;
+  letter-spacing: 0.8px;
+  font-weight: 500;
 }
+@media (min-width: 768px) {
+  p {
+    font-size: 15px;
+  }
+}
+
 a {
   color: var(--primary);
   text-decoration: none;
   background-color: transparent;
+  font-family: var(--font-roboto-mono);
+}
+span, a, a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 img {
   width: 100%;
@@ -115,7 +132,7 @@ img {
 /* -------------Title bottom line------------- */
 .title {
   display: inline-block;
-  font-size: 36px;
+  font-size: 20px;
   padding-bottom: 10px;
   position: relative;
   z-index: 2;
@@ -141,6 +158,29 @@ img {
 .title-left:after {
   left: 0;
 }
+@media (min-width: 576px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
 /* =========================================== */
 
 /* ----------------Button Style-------------------- */
@@ -171,8 +211,8 @@ button {
   transition: background-color 0.5s ease-in-out 0s;
 }
 a.btn-primary {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .btn-primary:hover {
   color: var(--secondary);
@@ -200,7 +240,7 @@ a.btn-primary {
 }
 
 .btn-primary .first {
-  right: 105%;
+  right: 108%;
   top: 0;
 }
 
